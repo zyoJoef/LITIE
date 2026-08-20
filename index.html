@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Digital Life Journey | Module Output 1</title>
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, #173b67, #2878b5);
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            background: #102b4a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #2878b5;
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            color: #173b67;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2878b5;
+            padding-bottom: 8px;
+        }
+
+        section h3 {
+            color: #2878b5;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* ===== INTRO ===== */
+        .intro {
+            text-align: center;
+            background: linear-gradient(135deg, #e8f4ff, #ffffff);
+        }
+
+        .intro h2 {
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .timeline::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            background: #2878b5;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border: 4px solid #2878b5;
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -11px;
+        }
+
+        .right::after {
+            left: -11px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: #eef7ff;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        .timeline-content h3 {
+            margin-top: 0;
+        }
+
+        .timeline-content strong {
+            color: #173b67;
+        }
+
+        /* ===== AUDIT CARDS ===== */
+        .audit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .audit-card {
+            background: #f4f9fd;
+            border-left: 5px solid #2878b5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .audit-card h3 {
+            margin-top: 0;
+        }
+
+        /* ===== HABITS ===== */
+        .habit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .habit-card {
+            padding: 25px;
+            border-radius: 10px;
+            background: #f5faff;
+            border: 1px solid #d8e8f5;
+        }
+
+        .habit-card h3 {
+            margin-top: 0;
+        }
+
+        .habit-card ul,
+        .goals li {
+            margin-left: 25px;
+        }
+
+        /* ===== GOALS ===== */
+        .goal {
+            background: #eef7ff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 5px solid #2878b5;
+        }
+
+        .goal strong {
+            color: #173b67;
+        }
+
+        /* ===== CONCLUSION ===== */
+        .conclusion {
+            background: linear-gradient(135deg, #173b67, #2878b5);
+            color: white;
+        }
+
+        .conclusion h2 {
+            color: white;
+            border-color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #102b4a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 5px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media screen and (max-width: 768px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                padding: 12px 10px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 25px 20px;
+            }
+
+            .audit-grid,
+            .habit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 55px;
+                padding-right: 10px;
+                text-align: left;
+                left: 0;
+            }
+
+            .left::after,
+            .right::after {
+                left: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>My Digital Life Journey</h1>
+        <p>From Technology User to Responsible Digital Citizen</p>
+        <p><strong>Module Output 1</strong></p>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <ul>
+            <li><a href="#part1">Part 1</a></li>
+            <li><a href="#part2">Part 2</a></li>
+            <li><a href="#part3">Part 3</a></li>
+            <li><a href="#part4">Part 4</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- ===== INTRODUCTION ===== -->
+        <section class="intro">
+            <h2>My Digital Life Journey</h2>
+
+            <p>
+                Technology has become an important part of my everyday life.
+                From studying and communicating with other people to entertainment
+                and accessing information, digital technology has changed the way
+                I learn, work, and interact with the world.
+            </p>
+
+            <p>
+                This digital portfolio reflects my experiences as a member of the
+                Information Society and examines how I can become a more responsible
+                and aware digital citizen.
+            </p>
+        </section>
+
+
+        <!-- ===== PART 1 ===== -->
+        <section id="part1">
+            <h2>Part 1: My Life in the Information Society</h2>
+
+            <h3>How Technology Affects My Daily Life</h3>
+
+            <p>
+                Technology plays a major role in my daily life. I use digital
+                devices such as computers and smartphones for communication,
+                education, entertainment, research, and accessing different
+                online services. The Internet allows me to quickly find
+                information and communicate with people regardless of distance.
+            </p>
+
+            <p>
+                As a student, technology is especially important because many
+                learning activities now involve digital platforms. I use the
+                Internet to research topics, access learning materials, submit
+                school requirements, communicate with classmates, and work on
+                different projects. Digital tools also make it easier to organize
+                files and collaborate with other people.
+            </p>
+
+            <h3>Technology in Learning and Communication</h3>
+
+            <p>
+                One of the biggest benefits of technology is the convenience it
+                provides in education. Instead of relying only on printed books,
+                I can access websites, digital documents, educational videos,
+                online libraries, and other learning resources. Communication
+                has also become faster through messaging applications, email,
+                video calls, and social media.
+            </p>
+
+            <h3>Technology Compared with Previous Generations</h3>
+
+            <p>
+                My experience with technology is different from that of my
+                parents and older family members. In the past, information was
+                often obtained through printed books, newspapers, television,
+                radio, or direct communication. Today, information can be
+                accessed almost instantly using a smartphone or computer.
+            </p>
+
+            <p>
+                Because of this change, I have become more dependent on digital
+                technology. I believe it would be difficult to function
+                effectively without the Internet because many educational,
+                communication, and everyday activities now depend on online
+                services.
+            </p>
+
+            <h3>Characteristics of the Digital Age in My Life</h3>
+
+            <p>
+                Several characteristics of the Digital Age are visible in my
+                daily routine. These include instant access to information,
+                digital communication, mobile computing, cloud-based services,
+                online collaboration, and the ability to access information
+                from almost anywhere. Technology has made many activities
+                faster and more convenient, but it also requires responsible
+                use and self-control.
+            </p>
+        </section>
+
+
+        <!-- ===== PART 2 ===== -->
+        <section id="part2">
+            <h2>Part 2: My Personal Technology Timeline</h2>
+
+            <p>
+                My relationship with technology developed gradually. Each
+                milestone introduced me to new ways of learning, communicating,
+                and solving problems.
+            </p>
+
+            <div class="timeline">
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>First Exposure to Computers</h3>
+
+                        <p>
+                            <strong>Milestone:</strong> My first experiences
+                            with computers introduced me to basic computer
+                            operations, typing, applications, and digital files.
+                        </p>
+
+                        <p>
+                            <strong>Impact:</strong> Computers became useful
+                            tools for schoolwork and helped me understand how
+                            technology could make tasks easier.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>First Internet Experience</h3>
+
+                        <p>
+                            <strong>Milestone:</strong> My first experience with
+                            the Internet introduced me to websites, online
+                            information, searches, and digital communication.
+                        </p>
+
+                        <p>
+                            <strong>Impact:</strong> It gave me access to a much
+                            larger amount of information and changed the way I
+                            searched for answers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>First Smartphone</h3>
+
+                        <p>
+                            <strong>Milestone:</strong> Having my first
+                            smartphone allowed me to carry a computer-like
+                            device wherever I went.
+                        </p>
+
+                        <p>
+                            <strong>Impact:</strong> Smartphones made
+                            communication, Internet access, photography,
+                            entertainment, and school-related activities more
+                            convenient.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>First Cloud-Based Application</h3>
+
+                        <p>
+                            <strong>Milestone:</strong> Cloud-based applications
+                            introduced me to storing and accessing files and
+                            information online.
+                        </p>
+
+                        <p>
+                            <strong>Impact:</strong> Cloud computing made it
+                            possible to access my files from different devices
+                            and reduced my dependence on a single computer.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Most Important Technology Today</h3>
+
+                        <p>
+                            <strong>Milestone:</strong> Today, my smartphone
+                            and computer are among the most important
+                            technologies I use.
+                        </p>
+
+                        <p>
+                            <strong>Impact:</strong> They support my education,
+                            communication, research, productivity, entertainment,
+                            and access to digital services.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===== PART 3 ===== -->
+        <section id="part3">
+            <h2>Part 3: My Digital Citizenship Audit</h2>
+
+            <div class="audit-grid">
+
+                <div class="audit-card">
+                    <h3>A. Digital Identity</h3>
+
+                    <p>
+                        I present myself online through my social media accounts,
+                        school-related platforms, email, and other digital
+                        services. I try to maintain a respectful image online
+                        because information posted on the Internet can affect
+                        how other people perceive me.
+                    </p>
+
+                    <p>
+                        My online identity generally represents who I am,
+                        although I recognize that people only see a portion of
+                        my personality through my online activities.
+                    </p>
+                </div>
+
+
+                <div class="audit-card">
+                    <h3>B. Digital Footprint</h3>
+
+                    <p>
+                        My digital footprint consists of information such as
+                        social media activity, comments, uploaded content,
+                        online accounts, school activities, and websites that
+                        I visit.
+                    </p>
+
+                    <p>
+                        A positive digital footprint can demonstrate my skills,
+                        achievements, and responsible behavior. However,
+                        inappropriate posts or oversharing personal information
+                        could negatively affect my privacy and reputation.
+                    </p>
+                </div>
+
+
+                <div class="audit-card">
+                    <h3>C. Online Etiquette</h3>
+
+                    <p>
+                        I try to communicate respectfully online by thinking
+                        before responding and avoiding unnecessary arguments.
+                        I believe that people should remember that there is a
+                        real person behind every account.
+                    </p>
+
+                    <p>
+                        I have encountered situations involving inappropriate
+                        comments, misinformation, disrespectful arguments, and
+                        other negative online behavior. These experiences show
+                        why proper online etiquette is important.
+                    </p>
+                </div>
+
+
+                <div class="audit-card">
+                    <h3>D. Responsible Technology Use</h3>
+
+                    <p>
+                        Before sharing information, I try to verify whether it
+                        comes from a reliable source. I compare information
+                        with other sources instead of immediately believing
+                        everything I see online.
+                    </p>
+
+                    <p>
+                        I also protect my accounts by using strong passwords,
+                        avoiding suspicious links, keeping software updated,
+                        and using two-factor authentication whenever possible.
+                    </p>
+                </div>
+
+
+                <div class="audit-card">
+                    <h3>E. Digital Well-Being</h3>
+
+                    <p>
+                        I spend several hours online each day because of school,
+                        communication, entertainment, and other activities.
+                        Technology helps me become more productive, but excessive
+                        use can also become distracting.
+                    </p>
+
+                    <p>
+                        Too much screen time can affect my sleep, focus,
+                        productivity, and relationships. Because of this, I
+                        need to maintain a balance between digital activities
+                        and offline activities.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===== PART 4 ===== -->
+        <section id="part4">
+            <h2>Part 4: Personal Action Plan</h2>
+
+            <div class="habit-grid">
+
+                <div class="habit-card">
+                    <h3>Three Positive Digital Habits</h3>
+
+                    <ul>
+                        <li>Use two-factor authentication on important accounts.</li>
+                        <li>Organize important school files using cloud storage.</li>
+                        <li>Use digital tools to improve productivity and manage schoolwork.</li>
+                    </ul>
+                </div>
+
+
+                <div class="habit-card">
+                    <h3>Three Habits I Need to Improve</h3>
+
+                    <ul>
+                        <li>Reduce unnecessary recreational screen time.</li>
+                        <li>Avoid oversharing personal information online.</li>
+                        <li>Avoid multitasking when attending online classes or completing important tasks.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <h3>My SMART Goals for the Next Month</h3>
+
+            <div class="goal">
+                <strong>Goal 1 – Reduce Recreational Screen Time</strong>
+
+                <p>
+                    For the next 30 days, I will limit unnecessary social media
+                    and entertainment use to approximately one hour per day
+                    so I can spend more time studying, resting, and doing
+                    productive activities.
+                </p>
+            </div>
+
+
+            <div class="goal">
+                <strong>Goal 2 – Improve Account Security</strong>
+
+                <p>
+                    Within the next 30 days, I will review my important online
+                    accounts, create stronger passwords where necessary, and
+                    enable two-factor authentication on accounts that support it.
+                </p>
+            </div>
+
+
+            <div class="goal">
+                <strong>Goal 3 – Practice Responsible Information Sharing</strong>
+
+                <p>
+                    For the next 30 days, I will verify information using at
+                    least two reliable sources before sharing important or
+                    questionable information online.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ===== CONCLUSION ===== -->
+        <section id="conclusion" class="conclusion">
+            <h2>Conclusion</h2>
+
+            <p>
+                Technology has become an essential part of my life as a member
+                of the Information Society. It has improved the way I learn,
+                communicate, find information, complete tasks, and interact
+                with other people.
+            </p>
+
+            <p>
+                However, being a digital citizen is not only about knowing how
+                to use technology. It also means understanding its effects,
+                protecting personal information, communicating respectfully,
+                recognizing misinformation, and maintaining a healthy balance
+                between online and offline life.
+            </p>
+
+            <p>
+                My digital life journey shows that technology will continue to
+                influence my future. By developing responsible digital habits,
+                I can use technology not only as a convenient tool but also as
+                a means of learning, creating, communicating, and contributing
+                positively to society.
+            </p>
+        </section>
+
+    </main>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p><strong>My Digital Life Journey</strong></p>
+        <p>Module Output 1 | Information Society and Digital Citizenship</p>
+        <p>&copy; 2026 My Digital Portfolio</p>
+    </footer>
+
+</body>
+</html>
