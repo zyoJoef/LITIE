@@ -1,4 +1,6 @@
-/* ===== CLICKABLE WEBSITE TITLE ===== */
+/* =====================================================
+   CLICKABLE WEBSITE TITLE
+   ===================================================== */
 
 header h1 a {
     color: white;
@@ -11,7 +13,9 @@ header h1 a:hover {
 }
 
 
-/* ===== MODULE OUTPUT DROPDOWN ===== */
+/* =====================================================
+   MODULE OUTPUT DROPDOWN
+   ===================================================== */
 
 .dropdown {
     position: relative;
@@ -22,145 +26,128 @@ header h1 a:hover {
 }
 
 
-/* Dropdown menu */
+/* Dropdown Menu */
 
 .dropdown-menu {
     display: none;
+
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 190px;
-    background: #102b4a;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-}
 
-
-/* Dropdown links */
-
-.dropdown-menu li {
-    width: 100%;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 12px 15px;
-    color: white;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-
-/* Hover effect */
-
-.dropdown-menu a:hover {
-    background: #2878b5;
-}
-
-
-/* Show dropdown */
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* ===== CLICKABLE TITLE ===== */
-
-header h1 a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-header h1 a:hover {
-    opacity: 0.8;
-}
-
-
-/* ===== DROPDOWN MENU ===== */
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
     min-width: 200px;
 
     background: #102b4a;
 
     list-style: none;
+
     padding: 0;
     margin: 0;
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+    z-index: 1001;
 }
+
+
+/* Dropdown Items */
 
 .dropdown-menu li {
     width: 100%;
 }
 
+
+/* Dropdown Links */
+
 .dropdown-menu a {
     display: block;
+
     padding: 12px 15px;
 
     color: white;
+
     text-decoration: none;
 
     white-space: nowrap;
+
+    transition: 0.3s;
 }
+
+
+/* Dropdown Hover */
 
 .dropdown-menu a:hover {
     background: #2878b5;
 }
+
+
+/* Show Dropdown */
 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
 
-/* ===== HOME HERO ===== */
+/* =====================================================
+   HOME HERO
+   ===================================================== */
 
 .hero {
     text-align: center;
+
     padding: 60px 35px;
 
-    background:
-        linear-gradient(135deg, #173b67, #2878b5);
+    background: linear-gradient(
+        135deg,
+        #173b67,
+        #2878b5
+    );
 
     color: white;
 }
+
+
+/* Hero Heading */
 
 .hero h2 {
     color: white;
+
     border: none;
+
     font-size: 36px;
+
+    margin-bottom: 15px;
 }
+
+
+/* Hero Paragraph */
 
 .hero p {
     text-align: center;
+
     max-width: 800px;
+
     margin: 15px auto;
 }
 
 
-/* ===== BUTTON ===== */
+/* =====================================================
+   BUTTON
+   ===================================================== */
 
 .button {
     display: inline-block;
 
     margin-top: 20px;
+
     padding: 12px 25px;
 
     background: white;
+
     color: #173b67;
 
     text-decoration: none;
+
     font-weight: bold;
 
     border-radius: 6px;
@@ -168,24 +155,32 @@ header h1 a:hover {
     transition: 0.3s;
 }
 
+
+/* Button Hover */
+
 .button:hover {
     background: #102b4a;
+
     color: white;
 }
 
 
-/* ===== MODULE CARDS ===== */
+/* =====================================================
+   MODULE CARDS
+   ===================================================== */
 
 .module-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 25px;
 
     margin-top: 25px;
 }
+
+
+/* Individual Module Card */
 
 .module-card {
     background: #f4f9fd;
@@ -199,6 +194,9 @@ header h1 a:hover {
     transition: 0.3s;
 }
 
+
+/* Module Card Hover */
+
 .module-card:hover {
     transform: translateY(-5px);
 
@@ -206,13 +204,22 @@ header h1 a:hover {
         0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
+
+/* Module Card Heading */
+
 .module-card h3 {
     margin-top: 10px;
 }
 
+
+/* Module Card Paragraph */
+
 .module-card p {
     margin-top: 10px;
 }
+
+
+/* Module Card Link */
 
 .module-card a {
     color: #2878b5;
@@ -222,12 +229,17 @@ header h1 a:hover {
     font-weight: bold;
 }
 
+
+/* Module Card Link Hover */
+
 .module-card a:hover {
     text-decoration: underline;
 }
 
 
-/* ===== MODULE NUMBER ===== */
+/* =====================================================
+   MODULE NUMBER LABEL
+   ===================================================== */
 
 .module-number {
     display: inline-block;
@@ -246,7 +258,9 @@ header h1 a:hover {
 }
 
 
-/* ===== HIGHLIGHT ===== */
+/* =====================================================
+   HIGHLIGHT SECTION
+   ===================================================== */
 
 .highlight {
     background: #e8f4ff;
@@ -254,31 +268,47 @@ header h1 a:hover {
     border-left: 6px solid #2878b5;
 }
 
+
 .highlight h2 {
     border: none;
 }
 
 
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
 @media screen and (max-width: 768px) {
+
+    /* Module Cards */
 
     .module-grid {
         grid-template-columns: 1fr;
     }
 
+
+    /* Dropdown */
+
     .dropdown-menu {
         position: static;
+
         width: 100%;
 
         box-shadow: none;
     }
 
+
     .dropdown:hover .dropdown-menu {
         display: block;
     }
 
+
+    /* Hero */
+
     .hero {
         padding: 40px 20px;
     }
+
 
     .hero h2 {
         font-size: 28px;
