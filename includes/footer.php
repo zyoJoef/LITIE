@@ -1,7 +1,5 @@
-<footer class="footer">
-
-<p>2026 | Cadorna's Portfolio</p>
-
-<p class="footer-text">Computer Science Student • Saint Paul University Manila</p>
-
-</footer>
+    <footer>
+        <p><strong>My Digital Life Journey</strong></p>
+        <p>Digital Portfolio | Living In The I.T. Era</p>
+        <p>&copy; 2026 My Digital Portfolio</p>
+    </footer>
